@@ -256,8 +256,8 @@ async def main() -> None:
     wyoming_info = Info(
         asr=[
             AsrProgram(
-                name="Sherpa Onnx Offline STT", # Consider making this dynamic if possible
-                description="Sherpa Onnx Offline STT.",
+                name="Kroko Onnx Online STT", # Consider making this dynamic if possible
+                description="Kroko Onnx Online STT.",
                 attribution=Attribution(name="kroko", url="https://github.com/kroko-ai/kroko-onnx"),
                 installed=True,
                 version="0.0.1",
