@@ -15,7 +15,7 @@ from wyoming.info import AsrModel, AsrProgram, TtsVoice, TtsProgram, Describe, I
 from wyoming.server import AsyncEventHandler, AsyncTcpServer
 from wyoming.tts import Synthesize
 
-import sherpa_onnx
+import kroko_onnx
 from model_utils import initialize_models
 import uvicorn
 from model_container import ModelContainer
@@ -258,7 +258,7 @@ async def main() -> None:
             AsrProgram(
                 name="Sherpa Onnx Offline STT", # Consider making this dynamic if possible
                 description="Sherpa Onnx Offline STT.",
-                attribution=Attribution(name="k2-fsa", url="https://github.com/k2-fsa/sherpa-onnx"),
+                attribution=Attribution(name="kroko", url="https://github.com/kroko-ai/kroko-onnx"),
                 installed=True,
                 version="0.0.1",
                 models=[
@@ -266,7 +266,7 @@ async def main() -> None:
                         name=cli_args.stt_model if cli_args.stt_model else "default",
                         description="ASR Model.",
                         languages=[cli_args.language],
-                        attribution=Attribution(name="k2-fsa", url="https://github.com/k2-fsa/sherpa-onnx"),
+                        attribution=Attribution(name="kroko", url="https://github.com/kroko-ai/kroko-onnx"),
                         installed=True,
                         version="0.0.1",
                     )
@@ -301,7 +301,6 @@ async def main() -> None:
             )
 
         )
-
         # Run FastAPI server using uvicorn
         _LOGGER.info(f"Starting Wyoming server at {cli_args.host}:{cli_args.port}")
         _LOGGER.info(f"Starting FastAPI server at 0.0.0.0:{cli_args.api_port}")

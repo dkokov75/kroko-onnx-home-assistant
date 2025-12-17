@@ -15,6 +15,9 @@ ARG TTS_MODEL
 # Default model for base-image
 ARG STT_MODEL
 
+ARG KROKO_STT_MODEL
+ARG KROKO_KEY
+
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ARG S6_OVERLAY_VERSION_DEFAULT="3.2.0.2"
@@ -71,10 +74,15 @@ RUN apt-get update \
         netcat-traditional \
         tar \
         curl \
+        build-essential \
+        cmake \
+        libssl-dev \
+        pkg-config \
         bzip2 \
         git \
         cython3 \
         python3-pip \
+        python3-dev \
         python3 \
         ffmpeg \
     && rm -rf /var/lib/apt/lists/*
@@ -84,9 +92,15 @@ RUN if [ "$BUILD_TYPE" = "cuda" ]; then \
     apt-get update && apt-get install -y --no-install-recommends libasound2 && rm -rf /var/lib/apt/lists/*; \
     pip install --no-cache-dir numpy && pip install sherpa-onnx==1.10.43+cuda -f https://k2-fsa.github.io/sherpa/onnx/cuda.html; \
 else \
-    echo "BUILD_TYPE is not cuda, installing cpu version sherpa-onnx"; \
+    echo "BUILD_TYPE is not cuda, installing cpu version kroko-onnx"; \
     pip install --break-system-packages --no-cache-dir sherpa-onnx numpy; \
 fi
+
+RUN git clone https://github.com/kroko-ai/kroko-onnx.git; \
+    cd kroko-onnx;\
+    KROKO_LICENSE=ON pip install --break-system-packages .
+
+RUN pip install --upgrade pip
 
 # Copy root filesystem conditionally
 COPY rootfs /tmp/staging_rootfs_conditional
@@ -131,6 +145,8 @@ ENV LANGUAGE=${LANGUAGE}
 ENV SPEED='1.0'
 ENV DEBUG='False'
 ENV STT_MODEL=${STT_MODEL}
+ENV KROKO_STT_MODEL=${KROKO_STT_MODEL}
+ENV KROKO_KEY=${KROKO_KEY}
 ENV STT_USE_INT8_ONNX_MODEL='False'
 ENV STT_BUILTIN_AUTO_CONVERT_NUMBER='False'
 ENV STT_THREAD_NUM='2'

@@ -1,0 +1,4 @@
+tqdm
+tabulate
+argparse
+requests
