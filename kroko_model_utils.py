@@ -43,7 +43,9 @@ def kroko_get_languages():
 
 def kroko_get_download_file(model):
     current_dir = os.getcwd()
-    filename = f"{current_dir}/models/stt/kroko_models/{model['name']}"
+    model_dir = f"{current_dir}/models/stt/kroko_models"
+    os.makedirs(model_dir, exist_ok=True)
+    filename = f"{model_dir}/{model['name']}"
 
     try:
         with requests.get(model['url'], stream=True) as r:
