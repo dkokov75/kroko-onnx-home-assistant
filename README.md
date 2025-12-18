@@ -2,7 +2,7 @@
 
 ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
 
-This repository is based on the original [sherpa-onnx-tts-stt]() project and is intended to integrate with [Kroko ONNX streaming models](https://github.com/kroko-ai/kroko-onnx).
+This repository is based on the original [sherpa-onnx-tts-stt](https://github.com/ptbsare/sherpa-onnx-tts-stt) project and is intended to integrate with [Kroko ONNX streaming models](https://github.com/kroko-ai/kroko-onnx).
 
 Special thanks to NaggingDaivy on **[Discord](https://discord.gg/JT7wdtnK79)** for the initial work and the work by the wonderful sherpa-onnx-tts-stt for adding support for streaming models in record time.
 
@@ -48,7 +48,7 @@ isabella, 23->bf_lily, 24->bm_daniel, 25->bm_fable, 26->bm_george, 27->bm_lewis,
 ```
 
 ## Custom Models are supported.
-See [DOCS.md](https://github.com/ptbsare/sherpa-onnx-tts-stt/blob/main/DOCS.md) for documentation.
+See [DOCS.md](DOCS.md) for documentation.
 See [KROKO.md](KROKO.md) for Kroko ONNX Streaming STT setup documentation.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
