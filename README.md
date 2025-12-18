@@ -1,12 +1,17 @@
-# Home Assistant Add-on: Sherpa Onnx TTS/STT
+# Home Assistant Add-on: Sherpa Onnx TTS/Kroko Onnx STT
 
 ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
 
-Supports Kokoro-TTS!!
+This repository is based on the original [sherpa-onnx-tts-stt]() project and is intended to integrate with [Kroko ONNX streaming models](https://github.com/kroko-ai/kroko-onnx).
 
-Offline Sherpa-onnx TTS/STT with wyoming support, supports kokoro-TTS/matcha-TTS/paraformer-STT, requires 1.5GB RAM.
+Special thanks to NaggingDaivy on **[Discord](https://discord.gg/JT7wdtnK79)** for the initial work and the work by the wonderful sherpa-onnx-tts-stt for adding support for streaming models in record time.
 
-离线Sherpa-onnx TTS/STT的wyoming集成，支持kokoro-TTS/matcha-TTS/paraformer-STT，需要1.5G内存。
+Now with support of Kroko-STT!
+Supports Kokoro-TTS!
+
+Online Sherpa-onnx TTS/Streaming Kroko-onnx STT with wyoming support, supports kokoro-TTS/matcha-TTS/paraformer-STT, requires 1.5GB RAM.
+
+离线Sherpa-onnx TTS/Streaming Kroko-onnx STT的wyoming集成，支持kokoro-TTS/matcha-TTS/paraformer-STT，需要1.5G内存。
 
 Also supports Openai-format TTS/STT api  IP:10500/v1/audio/speech IP:10500/v1/audio/transcriptions
 
@@ -14,6 +19,7 @@ Also supports Openai-format TTS/STT api  IP:10500/v1/audio/speech IP:10500/v1/au
 (It just works. PR is welcomed to improve this.)
 
 ## Supported STT Models:
+* <u>kroko-onnx-streaming (аvailable for [all languages](https://docs.kroko.ai/languages/#on-premise-models) supported by Kroko)</u>
 * sherpa-onnx-paraformer-zh-2023-03-28 (Chinese Only, very fast on Intel(R) Celeron(R) CPU N3350 @ 1.10GHz)
 * sherpa-onnx-paraformer-zh-small-2024-03-09 (Chinese Only, very fast on Intel(R) Celeron(R) CPU N3350 @ 1.10GHz)
 
@@ -43,6 +49,7 @@ isabella, 23->bf_lily, 24->bm_daniel, 25->bm_fable, 26->bm_george, 27->bm_lewis,
 
 ## Custom Models are supported.
 See [DOCS.md](https://github.com/ptbsare/sherpa-onnx-tts-stt/blob/main/DOCS.md) for documentation.
+See [KrokoSTT.md](https://github.com/ptbsare/sherpa-onnx-tts-stt/blob/main/KROKO.md) for Kroko ONNX Streaming STT setup documentation.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
