@@ -16,7 +16,10 @@ ARG TTS_MODEL
 ARG STT_MODEL
 
 ARG KROKO_STT_MODEL
+ENV KROKO_STT_MODEL=${KROKO_STT_MODEL}
+
 ARG KROKO_KEY
+ENV KROKO_KEY=${KROKO_KEY}
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -96,9 +99,11 @@ else \
     pip install --break-system-packages --no-cache-dir sherpa-onnx numpy; \
 fi
 
-RUN git clone https://github.com/kroko-ai/kroko-onnx.git; \
-    cd kroko-onnx;\
-    KROKO_LICENSE=ON pip install --break-system-packages .
+RUN if [ -n "$KROKO_STT_MODEL" ]; then \
+        git clone https://github.com/kroko-ai/kroko-onnx.git; \
+        cd kroko-onnx;\
+        KROKO_LICENSE=ON pip install --break-system-packages . ;\
+    fi
 
 RUN pip install --upgrade pip
 
@@ -145,8 +150,6 @@ ENV LANGUAGE=${LANGUAGE}
 ENV SPEED='1.0'
 ENV DEBUG='False'
 ENV STT_MODEL=${STT_MODEL}
-ENV KROKO_STT_MODEL=${KROKO_STT_MODEL}
-ENV KROKO_KEY=${KROKO_KEY}
 ENV STT_USE_INT8_ONNX_MODEL='False'
 ENV STT_BUILTIN_AUTO_CONVERT_NUMBER='False'
 ENV STT_THREAD_NUM='2'
