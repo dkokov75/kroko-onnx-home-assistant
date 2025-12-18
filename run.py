@@ -15,7 +15,6 @@ from wyoming.info import AsrModel, AsrProgram, TtsVoice, TtsProgram, Describe, I
 from wyoming.server import AsyncEventHandler, AsyncTcpServer
 from wyoming.tts import Synthesize
 
-import kroko_onnx
 from model_utils import initialize_models
 import uvicorn
 from model_container import ModelContainer
@@ -256,8 +255,8 @@ async def main() -> None:
     wyoming_info = Info(
         asr=[
             AsrProgram(
-                name="Kroko Onnx Online STT", # Consider making this dynamic if possible
-                description="Kroko Onnx Online STT.",
+                name="Kroko Onnx Streaming STT", # Consider making this dynamic if possible
+                description="Kroko Onnx Streaming STT.",
                 attribution=Attribution(name="kroko", url="https://github.com/kroko-ai/kroko-onnx"),
                 installed=True,
                 version="0.0.1",
