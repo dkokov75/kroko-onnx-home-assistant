@@ -7,6 +7,7 @@ This repository is based on the original [sherpa-onnx-tts-stt](https://github.co
 Special thanks to NaggingDaivy on **[Discord](https://discord.gg/JT7wdtnK79)** for the initial work and the work by the wonderful sherpa-onnx-tts-stt for adding support for streaming models in record time.
 
 Now with support of Kroko-STT!
+
 Supports Kokoro-TTS!
 
 Online Sherpa-onnx TTS/Streaming Kroko-onnx STT with wyoming support, supports kokoro-TTS/matcha-TTS/paraformer-STT, requires 1.5GB RAM.
@@ -58,3 +59,4 @@ See [KROKO.md](KROKO.md) for Kroko ONNX Streaming STT setup documentation.
 [armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
 
 [i386-shield]: https://img.shields.io/badge/i386-no-red.svg
+
