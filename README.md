@@ -19,7 +19,7 @@ Also supports Openai-format TTS/STT api  IP:10500/v1/audio/speech IP:10500/v1/au
 (It just works. PR is welcomed to improve this.)
 
 ## Supported STT Models:
-* <u>kroko-onnx-streaming (аvailable for [all languages](https://docs.kroko.ai/languages/#on-premise-models) supported by Kroko)</u>
+* <u>kroko-onnx-streaming (аvailable for [all languages](https://docs.kroko.ai/languages/#on-premise-models) supported by Kroko)</u> - See [KROKO.md](KROKO.md) for setup documentation.
 * sherpa-onnx-paraformer-zh-2023-03-28 (Chinese Only, very fast on Intel(R) Celeron(R) CPU N3350 @ 1.10GHz)
 * sherpa-onnx-paraformer-zh-small-2024-03-09 (Chinese Only, very fast on Intel(R) Celeron(R) CPU N3350 @ 1.10GHz)
 
@@ -49,10 +49,12 @@ isabella, 23->bf_lily, 24->bm_daniel, 25->bm_fable, 26->bm_george, 27->bm_lewis,
 
 ## Custom Models are supported.
 See [DOCS.md](DOCS.md) for documentation.
+
 See [KROKO.md](KROKO.md) for Kroko ONNX Streaming STT setup documentation.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
+
 [i386-shield]: https://img.shields.io/badge/i386-no-red.svg
