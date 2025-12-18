@@ -49,7 +49,7 @@ isabella, 23->bf_lily, 24->bm_daniel, 25->bm_fable, 26->bm_george, 27->bm_lewis,
 
 ## Custom Models are supported.
 See [DOCS.md](https://github.com/ptbsare/sherpa-onnx-tts-stt/blob/main/DOCS.md) for documentation.
-See [KROKO.md](https://github.com/ptbsare/sherpa-onnx-tts-stt/blob/main/KROKO.md) for Kroko ONNX Streaming STT setup documentation.
+See [KROKO.md](KROKO.md) for Kroko ONNX Streaming STT setup documentation.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
